@@ -4,13 +4,13 @@ import json
 def to_str(value):
     if isinstance(value, bool):
         if value:
-            return f'true'
+            return 'true'
         else:
-            return f'false'
+            return 'false'
     return value
 
 
-def generate_diff(file1, file2):    #gendiff 'tests/fixtures/file1.json' 'tests/fixtures/file2.json'
+def generate_diff(file1, file2):    # gendiff 'tests/fixtures/file1.json' 'tests/fixtures/file2.json'  # noqa: E501
     with (
         open(file1, 'r') as file1,
         open(file2, 'r') as file2,
@@ -31,4 +31,3 @@ def generate_diff(file1, file2):    #gendiff 'tests/fixtures/file1.json' 'tests/
                 result.append(f'    {key}: {to_str(data2[key])}')
         result.append('}')
         return '\n'.join(result)
-    
