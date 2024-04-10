@@ -14,7 +14,7 @@ lint:
 	poetry run flake8
 
 check:
-	poetry add -G dev pytest
+	poetry run pytest
 
 test-coverage:
 	poetry run coverage run -m pytest
