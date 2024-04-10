@@ -17,7 +17,7 @@ check:
 	poetry add -G dev pytest
 
 test-coverage:
-	
+	poetry run coverage run -m pytest
 
 gendiff:
 	poetry run gendiff
