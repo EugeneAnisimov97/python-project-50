@@ -16,5 +16,8 @@ lint:
 check:
 	poetry add -G dev pytest
 
+test-coverage:
+	
+
 gendiff:
 	poetry run gendiff
