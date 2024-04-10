@@ -29,6 +29,6 @@ def generate_diff(file1, file2):    #gendiff 'tests/fixtures/file1.json' 'tests/
                 result.append(f'  + {key}: {to_str(data2[key])}')
             else:
                 result.append(f'    {key}: {to_str(data2[key])}')
-        result[-1] = '}'
+        result.append('}')
         return '\n'.join(result)
     

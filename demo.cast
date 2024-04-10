@@ -1,7 +1,0 @@
-{"version": 2, "width": 208, "height": 14, "timestamp": 1712773241, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
-[0.010233, "o", "\u001b[?2004h\u001b]0;tipsy0061@EugeneAnisimov: ~/python-project-50\u0007\u001b[01;32mtipsy0061@EugeneAnisimov\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ "]
-[1.372332, "o", "\u001b[7mgendiff 'tests/fixtures/file1.json' 'tests/fixtures/file2.json'\u001b[27m"]
-[2.832389, "o", "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cgendiff 'tests/fixtures/file1.json' 'tests/fixtures/file2.json'\r\n\u001b[?2004l\r"]
-[2.848616, "o", "{\r\n  - follow: false\r\n    host: hexlet.io\r\n  - proxy: 123.234.53.22\r\n  - timeout: 50\r\n  + timeout: 20\r\n}\r\n"]
-[2.851798, "o", "\u001b[?2004h\u001b]0;tipsy0061@EugeneAnisimov: ~/python-project-50\u0007\u001b[01;32mtipsy0061@EugeneAnisimov\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ "]
-[6.177494, "o", "\u001b[?2004l\r\r\nexit\r\n"]
