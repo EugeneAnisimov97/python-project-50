@@ -1,6 +1,4 @@
 import json
-import os
-import itertools
 
 
 def to_str(value):
