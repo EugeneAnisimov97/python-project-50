@@ -13,11 +13,12 @@ package-install:
 lint:
 	poetry run flake8
 
-check:
-	poetry run pytest
-
 test-coverage:
 	poetry run coverage run -m pytest
 
 gendiff:
 	poetry run gendiff
+
+check:
+	poetry run pytest
+	poetry run flake8
