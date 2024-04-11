@@ -54,7 +54,7 @@ def to_txt(file1, file2):
     ext_file2 = os.path.splitext(file2)[1]
     if ext_file1 and ext_file2 == '.json':
         return to_json(file1, file2)
-    elif ext_file1 and ext_file2 == '.yml':
+    elif ext_file1 and ext_file2 in ['.yml', '.yaml']:
         return to_yaml(file1, file2)
     else:
         return 'Files of different resolutions'
