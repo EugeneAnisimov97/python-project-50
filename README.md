@@ -5,7 +5,6 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d93bf3deddd1242b6582/test_coverage)](https://codeclimate.com/github/EugeneAnisimov97/python-project-50/test_coverage)
 
 
-<h1 align="center">json files</h1>
-[![asciicast](https://asciinema.org/a/bE1Zmob3XZwA2MRss7h2wYftE.svg)](https://asciinema.org/a/bE1Zmob3XZwA2MRss7h2wYftE)
-<h1 align="center">json and yaml files</h1>
-[![asciicast](https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s.svg)](https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s)
+<h1 align="center">json files<a href="https://asciinema.org/a/bE1Zmob3XZwA2MRss7h2wYftE" target="_blank"><img src="https://asciinema.org/a/bE1Zmob3XZwA2MRss7h2wYftE.svg" /></a></h1>
+
+<h1 align="center">json and yaml files<a href="https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s" target="_blank"><img src="https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s.svg" /></a></h1>
