@@ -3,32 +3,6 @@ import yaml
 import os
 
 
-# def to_str(value):
-#     if isinstance(value, bool):
-#         if value:
-#             return 'true'
-#         else:
-#             return 'false'
-#     return value
-
-
-# def get_content(data1, data2):
-#     result = ['{']
-#     keys = data1.keys() | data2.keys()
-#     for key in sorted(keys):
-#         if key not in data1:
-#             result.append(f'  + {key}: {to_str(data2[key])}')
-#         elif key not in data2:
-#             result.append(f'  - {key}: {to_str(data1[key])}')
-#         elif data1[key] != data2[key]:
-#             result.append(f'  - {key}: {to_str(data1[key])}')
-#             result.append(f'  + {key}: {to_str(data2[key])}')
-#         else:
-#             result.append(f'    {key}: {to_str(data2[key])}')
-#     result.append('}')
-#     return '\n'.join(result)
-
-
 def to_json(file1, file2):
     with (
         open(file1, 'r') as file1,
@@ -49,7 +23,7 @@ def to_yaml(file1, file2):
         return data1, data2
 
 
-def to_txt(file1, file2):
+def load_correct_file(file1, file2):
     ext_file1 = os.path.splitext(file1)[1]
     ext_file2 = os.path.splitext(file2)[1]
     if ext_file1 and ext_file2 == '.json':
