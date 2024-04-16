@@ -3,6 +3,10 @@ ADD = '+ '
 DELETE = '- '
 NONE = '  '
 
+
+import itertools
+
+
 def to_str(value, spaces_count=2):
     if value is None:
         return 'null'
@@ -12,8 +16,7 @@ def to_str(value, spaces_count=2):
         spaces = (spaces_count + 4) * SEPARATOR
         lines = []
         for key, val in value.items():
-            formatted_value = to_str(val, spaces_count + 4)
-            lines.append(f"{spaces}{NONE}{key}: {formatted_value}")
+            lines.append(f"{spaces}{NONE}{key}: {(val, spaces_count + 4)}")
         line = '\n'.join(lines)
         return line
     return f'{value}'
@@ -37,9 +40,9 @@ def make_stylish_format(diff, count_space=2):
             corr_diff.append(f'{spaces}{DELETE}{key}: {old_value}')
             corr_diff.append(f'{spaces}{ADD}{key}: {new_value}')
         elif status == 'interior':
-            corr_diff.append(f'{spaces}{NONE}{key}: {make_stylish_format(i['children'], count_space + 4)}')
-    corr_diff.append('}')
-    string = '\n'.join(corr_diff)
+            corr_diff.append(f'{spaces}{NONE}{key}: {make_stylish_format(i["children"], count_space + 4)}')
+    result = itertools.chain(corr_diff, [(count_space-2) * SEPARATOR + '}'])
+    string = '\n'.join(result)
     
     return string
     

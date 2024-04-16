@@ -2,4 +2,8 @@ from gendiff.generate_diff import generate_diff
 
 
 def test_json():
-    assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json') == '{\n  - follow: false\n    host: hexlet.io\n  - proxy: 123.234.53.22\n  - timeout: 50\n  + timeout: 20\n  + verbose: true\n}'  # noqa: E501
+    with (
+        open('tests/fixtures/resultnoinner.txt', 'r') as test
+        ):
+        resoult_test = test.read()
+    assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json') == resoult_test
