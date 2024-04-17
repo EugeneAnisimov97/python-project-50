@@ -1,10 +1,9 @@
+import itertools
+
 SEPARATOR = " "
 ADD = '+ '
 DELETE = '- '
 NONE = '  '
-
-
-import itertools
 
 
 def to_str(value, spaces_count=2):
@@ -14,15 +13,16 @@ def to_str(value, spaces_count=2):
         return str(value).lower()
     elif isinstance(value, dict):
         spaces = (spaces_count + 4) * SEPARATOR
-        lines = []
+        lines = ['{']
         for key, val in value.items():
-            lines.append(f"{spaces}{NONE}{key}: {(val, spaces_count + 4)}")
-        line = '\n'.join(lines)
-        return line
+            lines.append(f"{spaces}{NONE}{key}: {to_str(val, spaces_count + 4)}")  # noqa: E501
+        result = itertools.chain(lines, [(spaces_count + 2) * SEPARATOR + '}'])
+        string = '\n'.join(result)
+        return string
     return f'{value}'
 
 
-def make_stylish_format(diff, count_space=2):
+def make_stylish_format(diff, count_space=2):  # noqa: C901
     spaces = count_space * SEPARATOR
     corr_diff = ['{']
     for i in diff:
@@ -36,71 +36,11 @@ def make_stylish_format(diff, count_space=2):
             corr_diff.append(f'{spaces}{DELETE}{key}: {old_value}')
         elif status == 'unchanged':
             corr_diff.append(f'{spaces}{NONE}{key}: {new_value}')
-        elif status == 'charged':
+        elif status == 'changed':
             corr_diff.append(f'{spaces}{DELETE}{key}: {old_value}')
             corr_diff.append(f'{spaces}{ADD}{key}: {new_value}')
         elif status == 'interior':
-            corr_diff.append(f'{spaces}{NONE}{key}: {make_stylish_format(i["children"], count_space + 4)}')
-    result = itertools.chain(corr_diff, [(count_space-2) * SEPARATOR + '}'])
+            corr_diff.append(f'{spaces}{NONE}{key}: {make_stylish_format(i["children"], count_space + 4)}')  # noqa: E501
+    result = itertools.chain(corr_diff, [(count_space - 2) * SEPARATOR + '}'])
     string = '\n'.join(result)
-    
     return string
-    
-
-# def to_str(value):
-#     if isinstance(value, bool):
-#         if value:
-#             return 'true'
-#         else:
-#             return 'false'
-#     return value
-
-
-# def get_added(key, value):
-#     return {'status': 'added',
-#             'key': key,
-#             'new_value': value}
-    
-    
-# def get_deleted(key, value):
-#     return {'status': 'deleted',
-#             'key': key,
-#             'old_value': value}
-    
-    
-# def get_unchanged(key, value):
-#     return {'status': 'unchanged',
-#             'key': key,
-#             'value': value}
-    
-    
-# def get_changed(key, value1, value2):
-#     return {'status': 'changed',
-#             'key': key,
-#             'new_value': value1,
-#             'old_value': value2}
-    
-    
-# def get_interior(key, value1, value2):
-#     return {'status': 'interior',
-#             'key': key,
-#             'children': generate(value1, value2)}
-
-
-# def generate(data1, data2):
-#     diff = []
-#     keys = data1.keys() | data2.keys()
-#     for key in sorted(keys):
-#         value1 = data1.get(key)
-#         value2 = data2.get(key)
-#         if key not in data1:
-#             diff.append(get_added(key, value2))
-#         elif key not in data2:
-#             diff.append(get_deleted(key,value1))
-#         elif data1[key] != data2[key]:
-#             diff.append(get_unchanged(key, value1, value2))
-#         elif isinstance(data1, dict) and isinstance(data2, dict):
-#             diff.append(get_interior(key, value1, value2))
-#         else:
-#             diff.append(get_unchanged(key, value1))
-#     return diff
