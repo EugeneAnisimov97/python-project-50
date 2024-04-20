@@ -10,3 +10,5 @@
 <h1 align="center">json and yaml files<a href="https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s" target="_blank"><img src="https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s.svg" /></a></h1>
 
 <h1 align="center">json and yaml files[nested]<a href="https://asciinema.org/a/45yB9Ewj4k0DCbvwqZ34lNphi" target="_blank"><img src="https://asciinema.org/a/45yB9Ewj4k0DCbvwqZ34lNphi.svg" /></a></h1>
+
+<h1 align="center">json plain<a href="https://asciinema.org/a/iQXwpPbm17fQW85jfbM7ascMQ" target="_blank"><img src="https://asciinema.org/a/iQXwpPbm17fQW85jfbM7ascMQ.svg" /></a></h1>
