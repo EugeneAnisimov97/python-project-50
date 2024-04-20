@@ -7,7 +7,8 @@ def to_str(value):
         return '[complex value]'
     return f"'{value}'"
 
-def make_plain_format(diff,ways=''):  # noqa: C901
+
+def make_plain_format(diff, ways=''):
     key = diff['key']
     old_value = to_str(diff.get("old_value"))
     new_value = to_str(diff.get("new_value"))
@@ -18,13 +19,14 @@ def make_plain_format(diff,ways=''):  # noqa: C901
     if status == 'deleted':
         return f"Property '{correct_way}' was removed"
     if status == 'changed':
-        return f"Property '{correct_way}' was updated. From {old_value} to {new_value}"
+        return f"Property '{correct_way}' was updated. From {old_value} to {new_value}"  # noqa: E501
     if status == 'interior':
-        return make_plain(diff.get("children"),correct_way)  # noqa: E501
+        return make_plain(diff.get("children"), correct_way)
     else:
         return None
 
-def make_plain(diff,ways=''):
+
+def make_plain(diff, ways=''):
     result = []
     for item in diff:
         correct_value = make_plain_format(item, ways)
