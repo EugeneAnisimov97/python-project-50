@@ -24,3 +24,9 @@ check:
 
 test:
 	poetry run pytest
+
+plain:
+	gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json -f plain
+
+stylish:
+	gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json
