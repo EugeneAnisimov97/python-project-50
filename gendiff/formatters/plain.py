@@ -1,7 +1,7 @@
 def to_str(value):
     if value is None:
         return 'null'
-    if isinstance(value, bool):
+    if isinstance(value, bool) or value == 0:
         return str(value).lower()
     if isinstance(value, (dict, list)):
         return '[complex value]'
