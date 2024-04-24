@@ -1,0 +1,116 @@
+[
+    {
+        "status": "interior",
+        "key": "common",
+        "children": [
+            {
+                "status": "added",
+                "key": "follow",
+                "new_value": false
+            },
+            {
+                "status": "unchanged",
+                "key": "setting1",
+                "new_value": "Value 1"
+            },
+            {
+                "status": "deleted",
+                "key": "setting2",
+                "old_value": 200
+            },
+            {
+                "status": "changed",
+                "key": "setting3",
+                "old_value": true,
+                "new_value": null
+            },
+            {
+                "status": "added",
+                "key": "setting4",
+                "new_value": "blah blah"
+            },
+            {
+                "status": "added",
+                "key": "setting5",
+                "new_value": {
+                    "key5": "value5"
+                }
+            },
+            {
+                "status": "interior",
+                "key": "setting6",
+                "children": [
+                    {
+                        "status": "interior",
+                        "key": "doge",
+                        "children": [
+                            {
+                                "status": "changed",
+                                "key": "wow",
+                                "old_value": "",
+                                "new_value": "so much"
+                            }
+                        ]
+                    },
+                    {
+                        "status": "unchanged",
+                        "key": "key",
+                        "new_value": "value"
+                    },
+                    {
+                        "status": "added",
+                        "key": "ops",
+                        "new_value": "vops"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "status": "interior",
+        "key": "group1",
+        "children": [
+            {
+                "status": "changed",
+                "key": "baz",
+                "old_value": "bas",
+                "new_value": "bars"
+            },
+            {
+                "status": "unchanged",
+                "key": "foo",
+                "new_value": "bar"
+            },
+            {
+                "status": "changed",
+                "key": "nest",
+                "old_value": {
+                    "key": "value"
+                },
+                "new_value": "str"
+            }
+        ]
+    },
+    {
+        "status": "deleted",
+        "key": "group2",
+        "old_value": {
+            "abc": 12345,
+            "deep": {
+                "id": 45
+            }
+        }
+    },
+    {
+        "status": "added",
+        "key": "group3",
+        "new_value": {
+            "deep": {
+                "id": {
+                    "number": 45
+                }
+            },
+            "fee": 100500
+        }
+    }
+]
