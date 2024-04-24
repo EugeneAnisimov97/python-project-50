@@ -1,5 +1,5 @@
-from gendiff.parsing import load_correct_file
-from gendiff.generate import generate
+from gendiff.parser import load_correct_file
+from gendiff.diff_tree import generate
 from gendiff.formatters.choice_format import get_format
 
 
