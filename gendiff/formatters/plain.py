@@ -21,7 +21,7 @@ def make_plain(diff, ways=''):
     if status == 'changed':
         return f"Property '{correct_way}' was updated. From {old_value} to {new_value}"  # noqa: E501
     if status == 'interior':
-        return make_plain(diff.get("children"), correct_way)
+        return make_plain_format(diff.get("children"), correct_way)
     else:
         return None
 
