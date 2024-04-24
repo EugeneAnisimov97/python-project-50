@@ -15,7 +15,7 @@ def to_str(value, spaces_count=2):
         result = itertools.chain(lines, [(spaces_count + 2) * SEPARATOR + '}'])
         string = '\n'.join(result)
         return string
-    return f"'{value}'"
+    return f"{value}"
 
 
 def make_stylish_format(diff, count_space=2):  # noqa: C901
