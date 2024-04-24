@@ -1,9 +1,9 @@
 def to_str(value):
     if value is None:
         return 'null'
-    elif isinstance(value, bool):
+    if isinstance(value, bool):
         return str(value).lower()
-    elif isinstance(value, (dict, list)):
+    if isinstance(value, (dict, list)):
         return '[complex value]'
     return f"'{value}'"
 
