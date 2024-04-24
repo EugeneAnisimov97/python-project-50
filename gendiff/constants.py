@@ -1,0 +1,9 @@
+SEPARATOR = " "
+ADD = '+ '
+DELETE = '- '
+NONE = '  '
+ADDED = 'added'
+DELETED = 'deleted'
+CHANGED = 'changed'
+UNCHANGED = 'unchanged'
+INTERIOR = 'interior'

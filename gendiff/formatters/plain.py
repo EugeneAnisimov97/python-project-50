@@ -15,15 +15,16 @@ def make_plain(diff, ways=''):
     status = diff.get('status')
     correct_way = f"{ways}.{key}" if ways else key
     if status == 'added':
-        return f"Property '{correct_way}' was added with value: {new_value}"
-    if status == 'deleted':
-        return f"Property '{correct_way}' was removed"
-    if status == 'changed':
-        return f"Property '{correct_way}' was updated. From {old_value} to {new_value}"  # noqa: E501
-    if status == 'interior':
-        return make_plain_format(diff.get("children"), correct_way)
+        line = f"Property '{correct_way}' was added with value: {new_value}"
+    elif status == 'deleted':
+        line = f"Property '{correct_way}' was removed"
+    elif status == 'changed':
+        line = f"Property '{correct_way}' was updated. From {old_value} to {new_value}"  # noqa: E501
+    elif status == 'interior':
+        line =  make_plain_format(diff.get("children"), correct_way)
     else:
-        return None
+        line = None
+    return line
 
 
 def make_plain_format(diff, ways=''):

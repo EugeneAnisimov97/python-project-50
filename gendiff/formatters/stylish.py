@@ -1,9 +1,5 @@
 import itertools
-
-SEPARATOR = " "
-ADD = '+ '
-DELETE = '- '
-NONE = '  '
+from gendiff.constants import ADDED, DELETED, UNCHANGED, CHANGED, INTERIOR, DELETE, ADD, NONE, SEPARATOR  # noqa: E501
 
 
 def to_str(value, spaces_count=2):
@@ -30,16 +26,16 @@ def make_stylish_format(diff, count_space=2):  # noqa: C901
         old_value = to_str(item.get("old_value"), count_space)
         new_value = to_str(item.get("new_value"), count_space)
         status = item.get('status')
-        if status == 'added':
+        if status == ADDED:
             corr_diff.append(f'{spaces}{ADD}{key}: {new_value}')
-        elif status == 'deleted':
+        elif status == DELETED:
             corr_diff.append(f'{spaces}{DELETE}{key}: {old_value}')
-        elif status == 'unchanged':
+        elif status == UNCHANGED:
             corr_diff.append(f'{spaces}{NONE}{key}: {new_value}')
-        elif status == 'changed':
+        elif status == CHANGED:
             corr_diff.append(f'{spaces}{DELETE}{key}: {old_value}')
             corr_diff.append(f'{spaces}{ADD}{key}: {new_value}')
-        elif status == 'interior':
+        elif status == INTERIOR:
             corr_diff.append(f'{spaces}{NONE}{key}: {make_stylish_format(item.get("children"), count_space + 4)}')  # noqa: E501
     result = itertools.chain(corr_diff, [(count_space - 2) * SEPARATOR + '}'])
     return '\n'.join(result)

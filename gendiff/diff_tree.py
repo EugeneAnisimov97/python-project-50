@@ -1,30 +1,33 @@
+from gendiff.constants import ADDED, DELETED, UNCHANGED, CHANGED, INTERIOR
+
+
 def get_added(key, value):
-    return {'status': 'added',
+    return {'status': ADDED,
             'key': key,
             'new_value': value}
 
 
 def get_deleted(key, value):
-    return {'status': 'deleted',
+    return {'status': DELETED,
             'key': key,
             'old_value': value}
 
 
 def get_unchanged(key, value):
-    return {'status': 'unchanged',
+    return {'status': UNCHANGED,
             'key': key,
             'new_value': value}
 
 
 def get_changed(key, value1, value2):
-    return {'status': 'changed',
+    return {'status': CHANGED,
             'key': key,
             'old_value': value1,
             'new_value': value2}
 
 
 def get_interior(key, value1, value2):
-    return {'status': 'interior',
+    return {'status': INTERIOR,
             'key': key,
             'children': generate(value1, value2)}
 
