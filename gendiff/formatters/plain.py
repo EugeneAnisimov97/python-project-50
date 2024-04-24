@@ -1,4 +1,5 @@
 def to_str(value):
+    '''Getting the string form of a value'''
     if value is None:
         return 'null'
     if isinstance(value, bool) or value == 0:
@@ -9,6 +10,7 @@ def to_str(value):
 
 
 def make_plain(diff, ways=''):
+    '''Generating file change lines'''
     key = diff.get('key')
     old_value = to_str(diff.get("old_value"))
     new_value = to_str(diff.get("new_value"))

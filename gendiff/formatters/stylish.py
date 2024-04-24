@@ -3,6 +3,7 @@ from gendiff.constants import ADDED, DELETED, UNCHANGED, CHANGED, INTERIOR, DELE
 
 
 def to_str(value, spaces_count=2):
+    '''Getting the string form of a value'''
     if value is None:
         return 'null'
     elif isinstance(value, bool):
@@ -19,6 +20,7 @@ def to_str(value, spaces_count=2):
 
 
 def make_stylish_format(diff, count_space=2):  # noqa: C901
+    '''Generating file change lines'''
     spaces = count_space * SEPARATOR
     corr_diff = ['{']
     for item in diff:

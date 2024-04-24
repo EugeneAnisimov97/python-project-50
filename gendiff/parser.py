@@ -4,6 +4,7 @@ import os
 
 
 def get_content(file):
+    '''Reading file'''
     with (
         open(file, 'r') as file
     ):
@@ -11,6 +12,7 @@ def get_content(file):
 
 
 def load_correct_file(file):
+    '''Retrieving file content'''
     ext_file = os.path.splitext(file)[1]
     if ext_file == '.json':
         return json.loads(get_content(file))
