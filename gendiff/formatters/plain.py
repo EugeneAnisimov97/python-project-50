@@ -21,7 +21,7 @@ def make_plain(diff, ways=''):
     elif status == 'changed':
         line = f"Property '{correct_way}' was updated. From {old_value} to {new_value}"  # noqa: E501
     elif status == 'interior':
-        line =  make_plain_format(diff.get("children"), correct_way)
+        line = make_plain_format(diff.get("children"), correct_way)
     else:
         line = None
     return line

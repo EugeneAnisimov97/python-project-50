@@ -1,4 +1,6 @@
 dist
+gendiff/__pycache__
+gendiff/formatters/__pycache__
 tests/__pycache__
-__pycache__/
-tests/__pycache__/
+gendiff/scripts/__pycache__
+.gitignore
