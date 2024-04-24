@@ -25,11 +25,11 @@ def to_str(value, spaces_count=2):
 def make_stylish_format(diff, count_space=2):  # noqa: C901
     spaces = count_space * SEPARATOR
     corr_diff = ['{']
-    for i in diff:
-        key = i['key']
-        old_value = to_str(i.get("old_value"), count_space)
-        new_value = to_str(i.get("new_value"), count_space)
-        status = i['status']
+    for item in diff:
+        key = item.get('key')
+        old_value = to_str(item.get("old_value"), count_space)
+        new_value = to_str(item.get("new_value"), count_space)
+        status = item.get('status')
         if status == 'added':
             corr_diff.append(f'{spaces}{ADD}{key}: {new_value}')
         elif status == 'deleted':
@@ -40,7 +40,6 @@ def make_stylish_format(diff, count_space=2):  # noqa: C901
             corr_diff.append(f'{spaces}{DELETE}{key}: {old_value}')
             corr_diff.append(f'{spaces}{ADD}{key}: {new_value}')
         elif status == 'interior':
-            corr_diff.append(f'{spaces}{NONE}{key}: {make_stylish_format(i["children"], count_space + 4)}')  # noqa: E501
+            corr_diff.append(f'{spaces}{NONE}{key}: {make_stylish_format(item.get("children"), count_space + 4)}')  # noqa: E501
     result = itertools.chain(corr_diff, [(count_space - 2) * SEPARATOR + '}'])
-    string = '\n'.join(result)
-    return string
+    return '\n'.join(result)

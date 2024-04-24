@@ -26,7 +26,10 @@ test:
 	poetry run pytest
 
 plain:
-	gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json -f plain
+	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json -f plain
 
 stylish:
-	gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json
+	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json
+
+json:
+	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json -f json

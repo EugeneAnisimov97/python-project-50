@@ -8,11 +8,11 @@ def to_str(value):
     return f"'{value}'"
 
 
-def make_plain_format(diff, ways=''):
-    key = diff['key']
+def make_plain(diff, ways=''):
+    key = diff.get('key')
     old_value = to_str(diff.get("old_value"))
     new_value = to_str(diff.get("new_value"))
-    status = diff['status']
+    status = diff.get('status')
     correct_way = f"{ways}.{key}" if ways else key
     if status == 'added':
         return f"Property '{correct_way}' was added with value: {new_value}"
@@ -26,10 +26,10 @@ def make_plain_format(diff, ways=''):
         return None
 
 
-def make_plain(diff, ways=''):
+def make_plain_format(diff, ways=''):
     result = []
     for item in diff:
-        correct_value = make_plain_format(item, ways)
+        correct_value = make_plain(item, ways)
         if correct_value is not None:
             result.append(correct_value)
     return '\n'.join(result)
