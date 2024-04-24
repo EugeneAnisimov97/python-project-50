@@ -1,6 +1,5 @@
 dist
 gendiff/__pycache__
-.coverage
 .gitignore
 gendiff/formatters/__pycache__
 tests/__pycache__
