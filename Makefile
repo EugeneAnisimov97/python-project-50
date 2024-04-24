@@ -26,7 +26,7 @@ test:
 	poetry run pytest
 
 plain:
-	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json -f plain
+	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.yml -f plain
 
 stylish:
 	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json

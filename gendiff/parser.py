@@ -3,32 +3,17 @@ import yaml
 import os
 
 
-def to_json(file1, file2):
+def get_content(file):
     with (
-        open(file1, 'r') as file1,
-        open(file2, 'r') as file2,
+        open(file, 'r') as file
     ):
-        data1 = json.load(file1)
-        data2 = json.load(file2)
-        return data1, data2
+        return file.read()
 
 
-def to_yaml(file1, file2):
-    with (
-        open(file1, 'r') as file1,
-        open(file2, 'r') as file2,
-    ):
-        data1 = yaml.safe_load(file1)
-        data2 = yaml.safe_load(file2)
-        return data1, data2
-
-
-def load_correct_file(file1, file2):
-    ext_file1 = os.path.splitext(file1)[1]
-    ext_file2 = os.path.splitext(file2)[1]
-    if ext_file1 and ext_file2 == '.json':
-        return to_json(file1, file2)
-    elif ext_file1 and ext_file2 in ['.yml', '.yaml']:
-        return to_yaml(file1, file2)
-    else:
-        return 'Files of different resolutions'
+def load_correct_file(file):
+    ext_file = os.path.splitext(file)[1]
+    if ext_file == '.json':
+        return json.loads(get_content(file))
+    if ext_file in ['.yml', '.yaml']:
+        return yaml.safe_load(get_content(file))
+    raise ValueError(f'{ext_file} unsupported. Supported formats: json and yml')
