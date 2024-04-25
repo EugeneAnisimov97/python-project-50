@@ -2,38 +2,21 @@ import pytest
 from gendiff.differ import generate_diff
 
 
-def get_result_stylish():
-    with (
-        open('tests/fixtures/resultstylish.txt', 'r') as stylish
-    ):
-        return stylish.read()
-
-
-def get_result_plain():
-    with (
-        open('tests/fixtures/resultplain.txt', 'r') as plain
-    ):
-        return plain.read()
-
-
-def get_result_json():
-    with (
-        open('tests/fixtures/resultjson.json', 'r') as json
-    ):
-        return json.read()
-
-
-@pytest.mark.parametrize('format, expected_result', [
+@pytest.mark.parametrize('file1, file2, format, expected_result', [
     (
-        'stylish', get_result_stylish()
+        'tests/fixtures/file1nested.json', 'tests/fixtures/file2nested.json', 'stylish', 'tests/fixtures/resultstylish.txt'  # noqa: E501
     ),
     (
-        'plain', get_result_plain()
+        'tests/fixtures/file1nested.json', 'tests/fixtures/file2nested.json', 'plain', 'tests/fixtures/resultplain.txt'  # noqa: E501
     ),
     (
-        'json', get_result_json()
+        'tests/fixtures/file1nested.json', 'tests/fixtures/file2nested.json', 'json', 'tests/fixtures/resultjson.json'  # noqa: E501
     )
 ])
-def test_formats(format, expected_result):
-    result = generate_diff('tests/fixtures/file1nested.json', 'tests/fixtures/file2nested.json', format)  # noqa: E501
-    assert result == expected_result
+def test_formats(file1, file2, format, expected_result):
+    with (
+        open(expected_result, 'r') as expected_output
+    ):
+        output = expected_output.read()
+        result = generate_diff(file1, file2, format)
+        assert result == output
