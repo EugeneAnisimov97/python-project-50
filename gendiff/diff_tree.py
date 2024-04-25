@@ -33,7 +33,7 @@ def get_interior(key, value1, value2):
 
 
 def generate(data1, data2):
-    '''Creating a file type for changes'''
+    '''Getting an external view with the changes of each switch'''
     diff = []
     keys = data1.keys() | data2.keys()
     keys_added = data1.keys() - data2.keys()
