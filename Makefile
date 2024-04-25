@@ -24,12 +24,3 @@ check:
 
 test:
 	poetry run pytest
-
-plain:
-	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.yml -f plain
-
-stylish:
-	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json
-
-json:
-	poetry run gendiff tests/fixtures/file1nested.json tests/fixtures/file2nested.json -f json
