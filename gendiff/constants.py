@@ -1,7 +1,3 @@
-SEPARATOR = " "
-ADD = '+ '
-DELETE = '- '
-NONE = '  '
 ADDED = 'added'
 DELETED = 'deleted'
 CHANGED = 'changed'

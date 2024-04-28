@@ -11,7 +11,7 @@ def get_content(file):
         return file.read()
 
 
-def load_correct_file(file):
+def parse_file(file):
     '''Retrieving file content'''
     ext_file = os.path.splitext(file)[1]
     if ext_file == '.json':

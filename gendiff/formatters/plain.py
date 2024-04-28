@@ -1,3 +1,6 @@
+from gendiff.constants import ADDED, DELETED, CHANGED, INTERIOR
+
+
 def to_str(value):
     '''Getting the string form of a value'''
     if value is None:
@@ -16,13 +19,13 @@ def make_plain(diff, ways=''):
     new_value = to_str(diff.get("new_value"))
     status = diff.get('status')
     correct_way = f"{ways}.{key}" if ways else key
-    if status == 'added':
+    if status == ADDED:
         line = f"Property '{correct_way}' was added with value: {new_value}"
-    elif status == 'deleted':
+    elif status == DELETED:
         line = f"Property '{correct_way}' was removed"
-    elif status == 'changed':
+    elif status == CHANGED:
         line = f"Property '{correct_way}' was updated. From {old_value} to {new_value}"  # noqa: E501
-    elif status == 'interior':
+    elif status == INTERIOR:
         line = make_plain_format(diff.get("children"), correct_way)
     else:
         line = None

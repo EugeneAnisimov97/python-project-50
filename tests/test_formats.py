@@ -7,10 +7,13 @@ from gendiff.differ import generate_diff
         'tests/fixtures/file1nested.json', 'tests/fixtures/file2nested.json', 'stylish', 'tests/fixtures/resultstylish.txt'  # noqa: E501
     ),
     (
-        'tests/fixtures/file1nested.json', 'tests/fixtures/file2nested.json', 'plain', 'tests/fixtures/resultplain.txt'  # noqa: E501
+        'tests/fixtures/file1nested.yml', 'tests/fixtures/file2nested.yml', 'plain', 'tests/fixtures/resultplain.txt'  # noqa: E501
     ),
     (
         'tests/fixtures/file1nested.json', 'tests/fixtures/file2nested.json', 'json', 'tests/fixtures/resultjson.json'  # noqa: E501
+    ),
+    (
+        'tests/fixtures/file1.json', 'tests/fixtures/file2.json', 'stylish', 'tests/fixtures/result.txt'  # noqa: E501
     )
 ])
 def test_formats(file1, file2, format, expected_result):

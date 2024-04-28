@@ -1,5 +1,9 @@
 import itertools
-from gendiff.constants import ADDED, DELETED, UNCHANGED, CHANGED, INTERIOR, DELETE, ADD, NONE, SEPARATOR  # noqa: E501
+from gendiff.constants import ADDED, DELETED, UNCHANGED, CHANGED, INTERIOR
+SEPARATOR = " "
+ADD = '+ '
+DELETE = '- '
+NONE = '  '
 
 
 def to_str(value, spaces_count=2):
