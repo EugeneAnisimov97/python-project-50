@@ -7,14 +7,30 @@
 used in the project:
 
 [**pytest**](https://docs.pytest.org/en/8.2.x/)
+
 [**json**](https://docs.python.org/3/library/json.html)
+
 [**pyyml**](https://pypi.org/project/PyYAML/)
+
 [**agreparse**](https://docs.python.org/3/library/argparse.html)
 
-<h1 align="center">json and yaml files<a href="https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s" target="_blank"><img src="https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s.svg" /></a></h1>
+Проект поддерживает следующие форматы файлов для поиска отличий:
 
-<h1 align="center">make stylish<a href="https://asciinema.org/a/45yB9Ewj4k0DCbvwqZ34lNphi" target="_blank"><img src="https://asciinema.org/a/45yB9Ewj4k0DCbvwqZ34lNphi.svg" /></a></h1>
+- YAML
+- JSON
 
-<h1 align="center">make plain<a href="https://asciinema.org/a/iQXwpPbm17fQW85jfbM7ascMQ" target="_blank"><img src="https://asciinema.org/a/iQXwpPbm17fQW85jfbM7ascMQ.svg" /></a></h1>
+### Форматы вывода отличий
+Для выбора формата вывода различий, укажите флаг -f с названием форматтера. Возможные форматтеры:
 
-<h1 align="center">make json<a href="https://asciinema.org/a/EF3Trp0sK2C70R5p8xP8p9wJ2" target="_blank"><img src="https://asciinema.org/a/EF3Trp0sK2C70R5p8xP8p9wJ2.svg" /></a></h1>
+- stylish (по умолчанию)
+- plain
+- json
+
+### Демонстрация работы программы:
+[![asciicast](https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s.svg)](https://asciinema.org/a/ugsYDZs6O60dxiHunkqSvow8s)
+
+[![asciicast](https://asciinema.org/a/45yB9Ewj4k0DCbvwqZ34lNphi.svg)](https://asciinema.org/a/45yB9Ewj4k0DCbvwqZ34lNphi)
+
+[![asciicast](https://asciinema.org/a/iQXwpPbm17fQW85jfbM7ascMQ.svg)](https://asciinema.org/a/iQXwpPbm17fQW85jfbM7ascMQ)
+
+[![asciicast](https://asciinema.org/a/EF3Trp0sK2C70R5p8xP8p9wJ2.svg)](https://asciinema.org/a/EF3Trp0sK2C70R5p8xP8p9wJ2)
