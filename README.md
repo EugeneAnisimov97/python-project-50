@@ -14,7 +14,7 @@ used in the project:
 
 [**agreparse**](https://docs.python.org/3/library/argparse.html)
 
-Проект поддерживает следующие форматы файлов для поиска отличий:
+###Проект поддерживает следующие форматы файлов для поиска отличий:
 
 - YAML
 - JSON
